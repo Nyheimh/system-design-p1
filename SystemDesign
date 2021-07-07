@@ -1,0 +1,19 @@
+Build a URL shortening service
+
+**Ask Question**
+
+1. Who's using it? -- Usecase
+What part of application? -- level of knowledge to know, the system is large
+- Know you are building a service that is large
+
+2. ERD (Entity Relation Diagram) - 
+- Etity (user)
+- Diagram (what is plotted)
+
+3. 
+a. Estimations (asked) (based on usecase, ex. how many users or logins)
+b. bottle necks (specific to articture of projects and interviewer can see and how to fix) (potential location in system that can cause error)
+c. constrainers (given) (limits or contraints, we work)
+
+4. Diagram to scaling partner
+
