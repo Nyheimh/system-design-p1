@@ -1,0 +1,11 @@
+how many urls can be processed per second?
+
+500m url/m about 200 sec
+  
+  write  100:1 (more reads than writes)
+
+50B url/m about 20k/sec
+  read
+
+500m any/month = 200 any /sec
+Broken down === 1 (30(days/month) * 24 (hours/day) * 60 (minutes/hour) * 60(seconds/minute))

@@ -1,19 +1,72 @@
-Build a URL shortening service
+Build aritechture for use case
+Use cases 
 
-**Ask Question**
+User has to go to website. 
 
-1. Who's using it? -- Usecase
-What part of application? -- level of knowledge to know, the system is large
-- Know you are building a service that is large
+User -> App
 
-2. ERD (Entity Relation Diagram) - 
-- Etity (user)
-- Diagram (what is plotted)
+Increase in users
 
-3. 
-a. Estimations (asked) (based on usecase, ex. how many users or logins)
-b. bottle necks (specific to articture of projects and interviewer can see and how to fix) (potential location in system that can cause error)
-c. constrainers (given) (limits or contraints, we work)
+10x Users -> (verticle scale) -> Larger Server
 
-4. Diagram to scaling partner
+100x Users -> (Load Balancer) -> Routes to different applications -> if CPU gets to 80% -> increase server
 
+
+200s -> CDN -> Load Balancer -> APP 
+                             >-> APP
+
+
+
+Content delivery network (CDN)
+  "A content delivery network (CDN) refers to a geographically distributed group of servers which work together to provide fast delivery of Internet content.
+  A CDN allows for the quick transfer of assets needed for loading Internet content including HTML pages, javascript files, stylesheets, images, and videos. The popularity of CDN services continues to grow, and today the majority of web traffic is served through CDNs, including traffic from major sites like Facebook, Netflix, and Amazon.
+  A properly configured CDN may also help protect websites against some common malicious attacks, such as Distributed Denial of Service (DDOS) attacks." - https://www.cloudflare.com/learning/cdn/what-is-a-cdn/
+How does a CDN cache things?
+CDN - backbone 
+  CDN is a get request, HTML page is a file, and a file can be cached. 
+  CDN will cache images and content delivery and everything gets cached. 
+  Cache invalidation one of the hardest issues to solve. Cache is going to ctch everything, the thing that is not controlled is infastructure which is free. Cache needs to be invalidated. Next user has to go through series of hops to get the cache. Will be automatically deleted when cahced.
+  This will be coded in by developer. Max TTL can be set, and if not set it will be stored forever. 
+  Code based invalidation, would need to blow the cache and needs to be added to server. 
+  If responded with JSON could be cached.
+  Things that dont get cached is POST request and shouldnt cache the resource. PUT, UPDATE, DELETE don't get cached.
+  GET is the only request that can be cached. 
+
+GRAPHQL - infinitely flexible
+  allow client to define information Ad Hoc.
+  Ad Hoc cant be cahced, because cant be determined.
+  Can always build faster endpoint. Using endpoint, and has to be dynamic and uses GET with POST request. 
+
+Apollo caches specifically GraphQL.
+GRAPHQL - allows engineer to be autonomous. Not recommended because of the HTTP verbs. 
+
+
+
+
+Load Balancer Defined
+
+  "Load balancing refers to efficiently distributing incoming network traffic across a group of backend servers, also known as a server farm or server pool.
+   Modern high‑traffic websites must serve hundreds of thousands, if not millions, of concurrent requests from users or clients and return the correct text, images, video, or application data, all in a fast and reliable manner. To cost‑effectively scale to meet these high volumes, modern computing best practice generally requires adding more servers.
+   A load balancer acts as the “traffic cop” sitting in front of your servers and routing client requests across all servers capable of fulfilling those requests in a manner that maximizes speed and capacity utilization and ensures that no one server is overworked, which could degrade performance. If a single server goes down, the load balancer redirects traffic to the remaining online servers. When a new server is added to the server group, the load balancer automatically starts to send requests to it."
+   - https://www.nginx.com/resources/glossary/load-balancing/
+
+
+Use Case #2
+
+Users -> 200s     -> LB               -> App ->       
+                                                        DB 
+                                      -> App ->
+
+                  [engineX]             [rails]      [mySQL]
+
+
+How to scale a database?
+
+- Sharding 
+  cant do join from one database to another database in certain databases
+
+- Clustering
+  my SQL has a version
+
+- PubSub
+  

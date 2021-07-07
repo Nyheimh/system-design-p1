@@ -1,0 +1,12 @@
+Sharding
+
+1. XYZ - Facebook
+2. ZZZ - Google
+3. XYZ - Youtube
+4. XYX - Vimeo
+
+      [1]
+      / \
+    [2] [3]
+
+Sharding is best when there are no relations

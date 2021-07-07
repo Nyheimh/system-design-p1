@@ -1,0 +1,73 @@
+White or Mural 
+
+Model = database as an object
+
+UseCases
+1. *Users can visit the shorten page
+2. *Users can shorten any origin URL
+3. *Users can be redirected from any shorten URL to the origin URL
+
+URL
+- *origin
+- *shorten
+- id
+- created at
++ user_id
+
+*solving question at hand*
+
++user
+- email
+- password_hash
+- id
+- created_at
+
+ERD
+user to url [one to many]
+url to user [many to one]
+
+
+create join table with UserURL
+
+UserURL
+- id
+- user_id
+- url_id
+- shorten
+
+
+
+user            |  |  userUrl        |  |  url
+_____           |  |  ________       |  | ______
+                |  |                 |  |
+-email          |  |   - id          |  | - id
+-password_hash  |  |   - user_id     |  | - origin
+-id             |  |   - url_id      |  |
+-created        |  |   - shorten     |  |
+
+                1:Many
+
+
+*Understand the basis and you can pivot around*
+
+
+SQL relations join
+Mongo no relations join
+
+Types of interiews
+___________________
+1. Sys Design
+2. OOD
+3. API Design
+
+
+3rd use case redirect
+
+GET 
+
+POST shorten (origin)
+ 201 {shorten url}
+
+GET getOrigin(shorten)
+  301 origin
+
