@@ -1,0 +1,18 @@
+Read replica - able to scale up as many as needed
+- all data from master is in read replica
+- read only from application standpoint because it writes from master
+
+
+Reddis - piece of data structure that has been deployed 
+Cache tend be fast 5x faster than hard drive, store data in RAM
+
+CDN useful because it takes off of load balancer
+
+Cache
+
+80 GBs data
+350m 
+21k/month
+
+-> 210/month
+2 millisecond to respond
