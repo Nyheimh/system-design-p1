@@ -26,3 +26,28 @@ POST createMessage(s_id, text, image, receiver_id)
 
 GET getMessages(s_id, ria)
 -> 200 message
+
+
+
+3.
+
+How many messages are being sent?
+
+300 million daily active users -> 50 messages/daily
+
+15 billion / day * 30day = 450 billion / month
+
+*500 million any/month = 200 any/seconds*
+
+
+Jean  -> LB -> App  -> 
+                                   -> DB -> Shard or Cluster
+            -> App  ->                |
+                                      v
+    
+
+                                    RR|RR
+                                       ^
+Surf  -> CDN -> LB  -> App             |
+                                   -> Cache        
+                    -> App
