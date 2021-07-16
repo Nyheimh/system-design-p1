@@ -16,3 +16,18 @@ Cache
 
 -> 210/month
 2 millisecond to respond
+
+LRU - Least Recently Usage
+
+Cache - RAM -> data(file)
+CDN - stores files, jpeg, html, json, etc
+
+
+80/20 rule, if you take 20% of the data. (in theory data is 100gb). Duplicated read replicas, if i take 20% as a base figure
+
+LRU = popularity, algorithm
+
+dictionary is a blocked container that dictates to RAM
+k = node double linked list -> class node value -> instantiate ->
+
+k = ref node = ref data

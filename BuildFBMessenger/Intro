@@ -1,0 +1,28 @@
+Questions
+1. Usecases
+2. Estimations
+3. ERD
+4. Scaling
+
+Usecases
+1. Users can send messenges (both text and image)
+2. Users can send in real time
+  - a. what is the aritechture to send 
+
+ERD
+
+message_table
+- id
+- sender_id
+- receiver_id
+- text
+- image_url
+- timestamp
+
+
+POST createMessage(s_id, text, image, receiver_id)
+-> 201 message
+
+
+GET getMessages(s_id, ria)
+-> 200 message
