@@ -1,0 +1,60 @@
+Database for Address Book
+
+- Who are users and where they live
+- All the places a user has ever lived
+
+User                Address
+_____               _________
+
+id                  location
+first_name          id 
+last_name
+
+
+User                User_Address        Address
+_______             ___________         ________
+
+surf thomas         <- 1.  1 ->         123 Wallaby Way
+zemora              <- 2.  1 ->         123 Wallaby Way
+
+
+user_address (join table)
+____________
+
+address_id
+user_id
+start date
+time stamp
+
+
+
+
+User                User_Address        Address
+_______             ___________         ________
+
+id                    address_id        id
+first_name            user_id           line 1
+last_name             timestamp         line 2
+                                        city
+                                        state
+                                        country
+                                        zip
+
+User                User_Address        Address
+_______             ___________         ________
+
+surf thomas         <- 1.  1 ->         123 Wallaby Way
+zemora              <- 2.  1 ->         123 Wallaby Way
+brian                                   306 85 Ave
+jr                                      16 Mill Ave
+regina                                  9856 Jurz
+
+O(n)
+
+log (O)n
+
+
+table reshift
+
+a table restructure will occur when there is a table inbalance. 
+
